@@ -179,20 +179,21 @@ function openTerminal() {
     "terminal"
   );
 }
-function openMishraSearch() {
+function openFiles() {
   closeMenus();
   createWindow(
-    "Mishra Search",
+    "Files",
     `
-    <div style="height:400px">
-      <script async src="https://cse.google.com/cse.js?cx=321a98194b4554868"></script>
-      <div class="gcse-search"></div>
-
-    </div>
+      <p>File system ready</p>
+      <p style="opacity:0.6;font-size:12px">
+        (Demo mode)
+      </p>
     `,
-    "mishra-search"
+    "files"
   );
 }
+
+
 
 
 function openNotes() {
@@ -252,15 +253,49 @@ function openCalculator() {
   );
 }
 
-function openFiles() {
-  closeMenus();
-  createWindow("Files", "<p>File system ready</p>", "files");
-}
-
 function openGallery() {
   closeMenus();
-  createWindow("Gallery", "<p>Gallery ready</p>", "gallery");
+
+  createWindow(
+    "Gallery",
+    `
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+    ">
+      <img src="assets/gallery/img1.jpg" class="gallery-img">
+      <img src="assets/gallery/img2.jpg" class="gallery-img">
+      <img src="assets/gallery/img3.jpg" class="gallery-img">
+    </div>
+    `,
+    "gallery"
+  );
 }
+// ================= GALLERY PREVIEW LOGIC =================
+document.addEventListener("click", e => {
+  if (!e.target.classList.contains("gallery-img")) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "gallery-overlay";
+
+  overlay.innerHTML = `
+    <img src="${e.target.src}">
+  `;
+
+  overlay.onclick = () => overlay.remove();
+
+  document.body.appendChild(overlay);
+});
+
+// ESC key se close
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    document.querySelector(".gallery-overlay")?.remove();
+  }
+});
+
+
 
 
 /*********************************
