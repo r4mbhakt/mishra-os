@@ -1,0 +1,242 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  cursor: url("assets/cursor/arrow.png") 4 4, auto;
+}
+
+/* POINTER CURSOR FOR CLICKABLE ITEMS */
+button,
+.icon,
+.start-item,
+.search-item,
+.task-icon {
+  cursor: url("assets/cursor/arrow.png") 4 4, pointer;
+}
+
+/* ================= BODY ================= */
+body {
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* ================= TOP BAR ================= */
+#topbar {
+  height: 35px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff9c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid #00ff9c;
+}
+
+/* ================= DESKTOP ================= */
+#desktop {
+  position: absolute;
+  top: 35px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  background: url("assets/wallpapers/bg.jpg") center / cover no-repeat;
+  z-index: 1;
+}
+
+/* ================= ICONS ================= */
+.icon {
+  width: 80px;
+  margin: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon img {
+  width: 48px;
+}
+
+/* ================= WINDOWS ================= */
+.window {
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  width: 500px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+}
+
+.window-header {
+  padding: 6px;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+}
+
+.window-body {
+  padding: 10px;
+}
+
+.close {
+  color: red;
+  cursor: pointer;
+}
+
+.window-body button {
+  background: black;
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* ================= TASKBAR ================= */
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid #00ff9c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 99998;
+}
+
+#task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#task-apps {
+  display: flex;
+  gap: 5px;
+}
+
+#task-right {
+  color: #00ff9c;
+}
+#task-right span {
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+#taskbar button,
+.task-icon {
+  background: black;
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* ================= START MENU ================= */
+#start-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  box-shadow: 0 0 15px #00ff9c55;
+  z-index: 99999;
+}
+
+.start-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #00ff9c33;
+}
+
+.start-item:hover {
+  background: #00ff9c;
+  color: black;
+}
+
+/* ================= SEARCH MENU ================= */
+#search-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 60px;
+  width: 260px;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #00ff9c;
+  padding: 10px;
+  z-index: 99999;
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px;
+  background: black;
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  margin-bottom: 10px;
+}
+
+/* ================= SEARCH ITEMS ================= */
+.search-item {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #00ff9c33;
+}
+
+/* SEARCH RESULT – DEFAULT VISIBLE STATE */
+.search-item {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #00ff9c33;
+  color: #00ff9c;
+  background: rgba(0, 255, 156, 0.08);
+}
+
+/* HOVER / ACTIVE STATE */
+.search-item:hover {
+  background: #00ff9c;
+  color: black;
+}
+
+/* OPTIONAL: keyboard focus future ke liye */
+.search-item:focus {
+  outline: none;
+  background: #00ff9c;
+  color: black;
+}
+
+/* ================= UTIL ================= */
+.hidden {
+  display: none;
+}
+
+/* keyboard selected search item */
+.search-item.active-search {
+  background: #00ff9c;
+  color: black;
+}
+
+/* WINDOW CONTROL BUTTON */
+.max-btn {
+  background: black;
+  border: 1px solid #00ff9c;
+  color: #00ff9c;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+/* TEXT CURSOR (I-BEAM) */
+input,
+textarea {
+  cursor: text;
+}

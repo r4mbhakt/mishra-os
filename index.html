@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MISHRA OS</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+  <header id="topbar">
+    <div class="left">
+      <strong>MISHRA OS</strong>
+    </div>
+    <div class="right">
+      <span id="clock">--:--:--</span>
+    </div>
+  </header>
+  <!-- ========================================== -->
+
+
+  <!-- ================= DESKTOP ================= -->
+  <main id="desktop">
+
+    <div class="icon" ondblclick="openTerminal()" title="Terminal">
+      <img src="assets/icons/terminal.png" alt="Terminal">
+      <span>Terminal</span>
+    </div>
+
+    <div class="icon" ondblclick="openFiles()" title="Files">
+      <img src="assets/icons/files.png" alt="Files">
+      <span>Files</span>
+    </div>
+
+    <div class="icon" ondblclick="openNotes()" title="Notes">
+      <img src="assets/icons/notes.png" alt="Notes">
+      <span>Notes</span>
+    </div>
+
+    <div class="icon" ondblclick="openGallery()" title="Gallery">
+      <img src="assets/icons/gallery.png" alt="Gallery">
+      <span>Gallery</span>
+    </div>
+
+    <div class="icon" ondblclick="openCalculator()" title="Calculator">
+      <img src="assets/icons/calculator.png" alt="Calculator">
+      <span>Calculator</span>
+    </div>
+    
+
+  </main>
+  <!-- =========================================== -->
+
+
+  <!-- ================= TASKBAR ================= -->
+  <footer id="taskbar">
+
+    <div id="task-left">
+      <button id="start-btn" title="Start Menu">⊞</button>
+      <button id="search-btn" title="Search">🔍</button>
+      <div id="task-apps"></div>
+    </div>
+
+    <div id="task-right">
+        <span id="battery">🔋 --%</span>
+        <span id="network">📶 Online</span>
+        <span id="sound">🔊 100%</span>
+      <span id="task-clock">--:--:--</span>
+    </div>
+
+  </footer>
+  <!-- =========================================== -->
+
+
+  <!-- ================= START MENU ============== -->
+  <nav id="start-menu" class="hidden">
+
+    <div class="start-item" onclick="openTerminal()">🖥 Terminal</div>
+    <div class="start-item" onclick="openNotes()">📝 Notes</div>
+    <div class="start-item" onclick="openCalculator()">🧮 Calculator</div>
+    <div class="start-item" onclick="openGallery()">🖼 Gallery</div>
+    <div class="start-item" onclick="openFiles()">📁 Files</div>
+
+  </nav>
+  <!-- =========================================== -->
+
+
+  <!-- ================= SEARCH MENU ============= -->
+  <section id="search-menu" class="hidden">
+
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search apps..."
+      autocomplete="off"
+    >
+
+    <div id="search-results"></div>
+
+  </section>
+  <!-- =========================================== -->
+
+
+  <!-- ================= SCRIPT ================== -->
+  <!-- Script ALWAYS at end so DOM is ready -->
+  <script src="script.js"></script>
+  <!-- =========================================== -->
+
+</body>
+</html>
